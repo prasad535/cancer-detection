@@ -5,7 +5,7 @@ import logging
 LOGGING_STR = "[%(asctime)s: %(levelname)s: %(module)s: %(message)s]"
 
 LOG_DIR = "logs"
-log_file_path = os.path.join(log_dir,"history_logs.log")
+log_file_path = os.path.join(LOG_DIR,"history_logs.log")
 os.makedirs(LOG_DIR, exist_ok=True)
 
 logging.basicConfig(
@@ -13,7 +13,7 @@ logging.basicConfig(
     format= LOGGING_STR,
 
     handlers=[
-        logging.FileHandler(log_filepath),
+        logging.FileHandler(log_file_path),
         logging.StreamHandler(sys.stdout)
     ]
 )
